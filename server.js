@@ -22,9 +22,7 @@ if (!process.env.DISABLE_XORIGIN) {
   });
 }
 
-// app.use('/public', express.static(process.cwd() + '/public'));
-app.use('/public', express.static('/public'));
-
+app.use('/public', express.static(process.cwd() + '/public'));
 
 app.route('/_api/package.json')
   .get(function(req, res, next) {
@@ -37,8 +35,7 @@ app.route('/_api/package.json')
   
 app.route('/')
     .get(function(req, res) {
-		  // res.sendFile(process.cwd() + '/views/index.html');
-      res.sendFile('/views/index.html');
+		  res.sendFile(process.cwd() + '/views/index.html');
     })
 
 // Respond not found to all the wrong routes
